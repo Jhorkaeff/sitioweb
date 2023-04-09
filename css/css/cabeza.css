@@ -1,0 +1,43 @@
+header{
+    display: block;
+    background-color: #31485a;
+    width:100%;
+}
+header h1{
+    text-transform: uppercase;
+    text-align: right;
+    width:95%;
+    display:inline-block;
+}
+header nav{
+    text-align: center;
+    display:inline-block;
+    width:100%;
+}
+header ul{
+    display: inline-block;
+    list-style-type: none;
+    margin: -0.3em auto;
+    text-align: right;
+}
+header ul li{
+    display: inline-block;
+    width: auto;
+}
+header ul li a{
+    text-decoration: none;
+    border: solid;
+    border-color: #683e3e;
+    border-radius: 50px;
+    border-width: 1px;
+    background-color: #8a4141;
+    color: #862e2e;
+    padding: 0.3em;
+}
+header ul li a:hover{
+    background-color: #807d37;
+    border-color: #353410;
+}
+header ul li a:active{
+    padding: 0.2em;
+}

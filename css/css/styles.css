@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+input[type="text"], input[type="password"] {
+    outline: none;
+    padding: 20px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 1px solid #a34444;
+    margin: 20px auto;
+}
+input[type="submit"] {
+    padding: 10px;
+    color: #a74747;
+    background: #4d7583;
+    width: 320px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #3e5d66;
+}
+.hola{
+    background-color: rgb(67, 67, 112);
+    width: 200px;
+
+}

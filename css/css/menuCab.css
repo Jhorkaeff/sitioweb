@@ -1,0 +1,98 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.collapsed{
+    display: none;
+}
+
+nav{
+    background-color: rgb(168, 111, 37);
+    color: white;
+    width: 100%;
+}
+nav .mobile{
+    display: none;
+}
+nav .mobile .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+nav .mobile .header .more button{
+    border: none;
+    background-color: rgb(189, 151, 29);
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+}
+nav .logo{
+    min-width: 250px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+}
+
+nav a:hover{
+    color: rgb(158, 138, 22);
+    background-color: #00c3ff;
+}
+nav .desktop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pad: 0 20px;
+}
+
+nav .desktop .primary,
+nav .desktop .secondary{
+    display: flex;
+}
+nav .desktop .secondary.mini{
+    display: none;
+}
+
+@media screen  and (max-width : 853px) {
+    nav .logo{
+        min-width: 100px;
+    }
+    nav .secondary.full{
+        display: none;
+    }
+    nav .secondary.mini{
+        display: block !important;
+    }
+    nav .secondary.mini .submenu{
+        background-color: rgb(187, 173, 51);
+        position: absolute;
+        display: none;
+        width: 200px;
+        right: 0;
+    }
+    nav .secondary.mini:hover .submenu{
+        display: block;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    nav .desktop {
+        display: none;
+    }
+    nav .mobile{
+        display: block;
+    }
+    
+}
