@@ -1,0 +1,21 @@
+						<?php
+                        primero es la conexion a la base de datos 
+                        //localhost es el nombre del servidor
+                        //root es el nombre del usuario
+                        //'' luego va la contraseña, pero como en localhost no es necesario, se deja vacio
+                        //sire es el nombre de la base de datos
+                        
+                        $mysqli = new mysqli('localhost','root','','sire');
+						
+                        //este es el query, la consulta que haremos a la base de datos
+                        $query = "SELECT ID_E FROM estudiante";
+
+                        //verificar que el query se haya hecho
+						$resu = $mysqli->query($query);
+						if($resu != false){
+							$sql = "SELECT ID_E FROM estudiante";
+						}else{
+							echo 'La consulta a ocurrido un error';
+						}
+						$mysqli->close();
+						?>

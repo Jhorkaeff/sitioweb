@@ -1,0 +1,176 @@
+<?php include("template/Cabacera.php"); ?>
+<?php 
+	include('phpqrcode/qrlib.php');
+	if(isset($_POST['generar'])){
+		$ID=$_POST['ID'];
+		$Nombre = $_POST['Nombre'];
+		$Apellido = $_POST['Apellido'];
+		$Turno = $_POST['Turno'];
+		$Carrera = $_POST['Carrera'];
+		$Cuatrimestre = $_POST['Cuatri'];
+
+		$url = "http://localhost/codigo_qr/add.php?ID=$ID&Nombre=$Nombre&Apellido=$Apellido&Turno=$Turno&Carrera=$Carrera&Cuatrimestre=$Cuatrimestre";
+		QRcode::png($url, 'temp/test.png' , QR_ECLEVEL_L, 10, 3);
+		echo '<img src="temp/test.png"/>';
+
+		$url = "http://localhost/codigo_qr/rec.php?ID=$ID&Nombre=$Nombre&Apellido=$Apellido&Turno=$Turno&Carrera=$Carrera&Cuatrimestre=$Cuatrimestre";
+		QRcode::png($url, 'temp/test.png' , QR_ECLEVEL_L, 10, 3);
+		echo '<img src="temp/test.png"/>';
+		
+		echo $url;
+
+		$filesw = 'temp/test.png';
+		$newfile = 'temp/test1.png';
+
+		if (!copy($filesw, $newfile)) {
+			echo "failed to copy";
+		}
+
+		$osf = rename($newfile, "temp/".$ID."_".$Nombre."_".$Apellido.".png");
+
+		$imh = $ID."_".$Nombre."_".$Apellido.".png";
+
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$db = "sire";
+
+		$conn = new mysqli($servername, $username, $password, $db);
+		if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+		}
+
+		$sql = "INSERT INTO qr (ID_Q, NombreQR, ImagenQR) VALUES ('$ID', '$imh', LOAD_FILE('C:/xampp/htdocs/codigo_qr/temp/test.png'))";
+
+		if ($conn->query($sql) === TRUE) {
+		echo "Record updated successfully";
+		} else {
+		echo "Error updating record: " . $conn->error;
+		}
+		$conn->close();
+
+	}
+?>
+<?php include("template/Pie.php"); ?>
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<?php include("template/Cabacera.php"); ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hola, Mundo 1</title>
+	</head>
+	<body background="img/ne.jpg">
+		<form action="mm.php" method="post" enctype="multipart/form-data">
+			<div class = "col-sm-8">
+				<font color = "white">
+					<h3>DBQR</h3>
+					<h4> 
+						<p><font color="blue">IMPORTANTE </font> Agregue los datos del estudiante</p>
+						<li><font color="blue">Calidad H de imagen: </font> se le dara la mas alta calidad posible a las imagenes qr </li>
+						<li><font color="blue">Tamaño 10: </font> el tamaño proporcional que se le dara a las qr</li>
+					</h4>
+					<p>Nivel: H</p>
+					<p>Tamaño: 10</p>
+					<div class="form-group">
+						<label>ID: </label>
+						<input type="number" class="form-control" placeholder="Ingresar ID" required name="ID">
+						<br>
+					</div>
+
+					<div class="form-group">
+						<label>Nombre: </label>
+						<input type="text" class="form-control" placeholder="Ingresar Nombre" required  name="Nombre">
+						<br>
+					</div>
+					<div class="form-group">
+						<label>Apellido: </label>
+						<input type="text" class="form-control" placeholder="Ingresar Apellido" required name="Apellido">
+						<br>
+					</div>
+					<div class="form-group">
+						<label>Turno: </label>
+						<select name="Turno">
+							<option value="Matutino">Matutino</option>
+							<option value="Vespertino">Vespertino</option>
+						</select>
+						<br>
+					</div>
+					<div class="form-group">
+						<label>Carrera: </label>
+						<select name="Carrera">
+							<option value="Sistema Computacionales">Sistemas Computacionales</option>
+							<option value="Arquitectura">Arquitectura</option>
+						</select>
+						<br>
+					</div>
+					<div class="form-group">
+						<label>Cuatrimestre: </label>
+						<select name="Cuatri">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+						</select>
+					</div>
+				</font>
+			</div>
+			<button type="submit" value="Generar" name="generar">Guardar</button>
+		</form>
+	</body>
+</html>
+<?php include("template/Pie.php"); ?> 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<?php
+    $mysqli = new mysqli('localhost','root','','sire');
+    $re = $mysqli->query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'sire' AND TABLE_NAME = 'horario_salida'");
+
+    for ($i=0; $i < $re->num_rows; $i++){
+        $fila_usuario = $re->fetch_assoc();
+        if ($i == 0) {
+            continue;
+        }
+        $pe = $fila_usuario['COLUMN_NAME'];
+        echo $pe;
+    }
+    $res = $mysqli->query("SELECT * FROM horario_salida");
+    
+    for ($i=0; $i < $re->num_rows; $i++){
+        while($row = mysqli_fetch_array($res)){
+            echo $row[$pe];
+        }
+    }
+    $mysqli->close();
+
+?>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<?php
+$mysqli = new mysqli('localhost','root','','sire');
+
+$res = $mysqli->query("SELECT * FROM horario_salida");
+while($row = $res->fetch_assoc()){
+    $keys = array_keys($row);
+    if ($keys === array_filter($keys, 'is_numeric')){
+        $data = array_combine(array_map('intval', $keys), array_values($row));
+    }
+        foreach ($row as $key => $value){
+            print_r($key);
+            print_r($value);
+        }
+    }
+
+$mysqli->close();
+?>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
