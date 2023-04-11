@@ -9,5 +9,5 @@
                 <a class="btn btn-primary btn-lg" href="https://www.tecplayacar.edu.mx/" role="button">¡¡CUIDADO!!</a>
             </p>
         </div>    
-<?php include("template/Pie.php"); ?>        
+<?php include("template/Pie.php"); ?>
        
