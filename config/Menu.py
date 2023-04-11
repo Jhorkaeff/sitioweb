@@ -11,6 +11,10 @@ def ve1 ():
     def vo():
         v.deiconify()
         v2.withdraw()
+        
+    def sd():
+        v3()
+        v2.withdraw()
     
     t1 = tk.Text(v2, height = 10, width = 40)
     t1.place(x=100, y=300)
@@ -23,7 +27,18 @@ def ve1 ():
     
     b2 = tk.Button(v2, text="Salir", command=v2.quit)
     b2.place(x=130, y=600)
-
+    
+    b3 = tk.Button(v2, text="Siguiente", command=sd)
+    b3.place(x=330, y=600)
+    
+def v3():
+    v3 = tk.Toplevel()
+    v3.geometry("300x200")
+    v3.title("Preguntas")
+    v3.resizable(False, False)
+    v3.geometry("{}x{}+{}+{}".format(v_width, v_height, x_cordinate, y_cordinate))
+    
+    
     
 v = tk.Tk()
 v.title("Ventana principal")
