@@ -2,9 +2,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <footer>            
             <div class="footer-contenido">
-                <h3>SIRE</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+                <h3>SIRE © 2023</h3>
+                <p>Servicios con fines de lucro</p>
                 <ul class="socials">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
