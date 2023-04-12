@@ -98,22 +98,22 @@
 				<div class="input-data">
 					<input type="text" class="form-control" required value="<?php echo $Nombre; ?>" name="Nombre" id="Nombre">
 					<div class="underline"></div>
-					<label for="ID">Ingrese el nombre estudiante</label>
+					<label for="Nombre">Ingrese el nombre estudiante</label>
 				</div><br><br>
 				<div class="input-data">
 					<input type="text" class="form-control" required value="<?php echo $Apellido; ?>" name="Apellido" id="Apellido">
 					<div class="underline"></div>
-					<label for="ID">Ingrese el apellido del estudiante</label>
+					<label for="Apellido">Ingrese el apellido del estudiante</label>
 				</div><br><br>
 				<div class="input-data">
 					<input type="email" class="form-control" required value="<?php echo $Correo; ?>" name="Correo" id="Correo">
 					<div class="underline"></div>
-					<label for="ID">Ingrese el correo del estudiante</label>
+					<label for="Correo">Ingrese el correo del estudiante</label>
 				</div><br><br>
 				<div class="input-data">
 					<input type="text" class="form-control" required value="<?php echo $Contra; ?>" name="Contra" id="Contra">
 					<div class="underline"></div>
-					<label for="ID">Ingrese la contraseña del estudiante</label>
+					<label for="Contra">Ingrese la contraseña del estudiante</label>
 				</div><br>
 				<div class = "form-group">
 					<label">Turno:</label>
@@ -203,7 +203,7 @@
 				<div class="input-data">
 					<input type="text" class="form-control" required value="<?php echo $Tel; ?>" name="Tel" id="Tel">
 					<div class="underline"></div>
-					<label>Ingrese el telefono del estudiante</label>
+					<label for="Tel">Ingrese el telefono del estudiante</label>
 				</div>
 				<div class = "form-group">
 					<label for="Imagen">Subir foto de perfil: </label>

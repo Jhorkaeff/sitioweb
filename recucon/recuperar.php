@@ -42,7 +42,7 @@ use PHPMailer\PHPMailer\Exception;
             $mail->isSMTP();
             $mail->SMTPAuth = true;
             $mail->Host = "smtp.gmail.com";
-            $mail->Port = "25";
+            $mail->Port = "587";
             $mail->Username = "contranuev@gmail.com";
             $mail->Password = "may123abc";
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;

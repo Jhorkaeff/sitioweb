@@ -13,8 +13,10 @@
             <div class="nav navbar-nav">
                 <a class="nav-item nav-link active" href="#">Administrador del sitio web<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="perfil.php">Perfil</a>
-                <a class="nav-item nav-link" href="E2/seccion/productos.php">Base de datos</a>
-                <a class="nav-item nav-link" href="salir.php">Salir</a>
+                <a class="nav-item nav-link" href="bdes.php">Base de datos de estudiantes</a>
+                <a class="nav-item nav-link" href="bdpr.php">Base de datos de profesores</a>
+                <a class="nav-item nav-link" href="bdpe.php">Base de datos de personal</a>
+                <a class="nav-item nav-link" href="cerrar.php">Salir</a>
                 <a class="nav-item nav-link" href="<?php echo $url;?>">Ver sitio web</a>
             </div>
         </nav>
