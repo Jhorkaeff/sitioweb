@@ -1,3 +1,4 @@
+<?php include("../config/db.php"); ?>
 <?php 
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
         $url = "https://";   
@@ -11,11 +12,6 @@
     $I = $output['ID'];
 ?>
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db = "sire";
-
     date_default_timezone_set("America/Cancun");
     $d = date("d_m_Y");
 
@@ -33,11 +29,6 @@
     $conn->close();
 ?>
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db = "sire";
-
     date_default_timezone_set("America/Cancun");
     $d = date("d_m_Y");
 
@@ -54,23 +45,17 @@
     }
     $conn->close();
 ?>
-<?php include("config/db.php"); ?>
-<?php include("template/Cabacera.php"); ?>
-        <link rel="stylesheet" href="CSS/css/add.css">
+<?php include("../template/Cabacera2.php"); ?>
+        <link rel="stylesheet" href="../CSS/css/add.css">
         <div class="color-fondo">
             <div class="contenedor1">
                 <div class ="contenedor2">
                     <form>
                         <div class="picture">
                             <div class="logo-gtup">
-                                <img class="alinear" src="img/logotec.png">
+                                <img class="alinear" src="../CSS/img/logotec.png">
                             </div>
-                            <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $db = "sire";
-                        
+                            <?php                       
                                 $conn = new mysqli($servername, $username, $password, $db);
                                 if ($conn->connect_error) {
                                 die("Connection failed: " . $conn->connect_error);
@@ -86,33 +71,6 @@
                         <div class="grid2">
                             <div class="n-estudiante">
                                 <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $db = "sire";
-                            
-                                    $conn = new mysqli($servername, $username, $password, $db);
-                                    if ($conn->connect_error) {
-                                    die("Connection failed: " . $conn->connect_error);
-                                    }
-                                    $sql = "SELECT ID_E From estudiante WHERE ID_E = '$I'";
-
-                                    $result = $conn->query($sql);
-                                    if ($result->num_rows > 0){
-                                        while($row = $result->fetch_assoc()){
-                                            echo "ID: " .$row['ID_E'];
-                                        }
-                                    }
-                                    $conn->close();
-                                ?>
-                            </div>
-                            <div class="a-estudiante">>
-                                <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $db = "sire";
-                            
                                     $conn = new mysqli($servername, $username, $password, $db);
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
@@ -122,21 +80,14 @@
                                     $result = $conn->query($sql);
                                     if ($result->num_rows > 0){
                                         while($row = $result->fetch_assoc()){
-                                            echo "Nombre: " .$row['Nombre'];
+                                            echo $row['Nombre'];
                                         }
                                     }
                                     $conn->close();
                                 ?>
                             </div>
-                        </div>
-                        <div class="texto-todo">
-                            <div class="matricula">
+                            <div class="a-estudiante">
                                 <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $db = "sire";
-                            
                                     $conn = new mysqli($servername, $username, $password, $db);
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
@@ -146,7 +97,26 @@
                                     $result = $conn->query($sql);
                                     if ($result->num_rows > 0){
                                         while($row = $result->fetch_assoc()){
-                                            echo "Apellido: " .$row['Apellido'];
+                                            echo $row['Apellido'];
+                                        }
+                                    }
+                                    $conn->close();
+                                ?>
+                            </div>
+                        </div>
+                        <div class="texto-todo">
+                            <div class="matricula">
+                                <?php
+                                    $conn = new mysqli($servername, $username, $password, $db);
+                                    if ($conn->connect_error) {
+                                    die("Connection failed: " . $conn->connect_error);
+                                    }
+                                    $sql = "SELECT ID_E From estudiante WHERE ID_E = '$I'";
+
+                                    $result = $conn->query($sql);
+                                    if ($result->num_rows > 0){
+                                        while($row = $result->fetch_assoc()){
+                                            echo "Matricula: " .$row['ID_E'];
                                         }
                                     }
                                     $conn->close();
@@ -154,11 +124,6 @@
                             </div>
                             <div class="t-estudiante">
                                 <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $db = "sire";
-                            
                                     $conn = new mysqli($servername, $username, $password, $db);
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
@@ -176,11 +141,6 @@
                             </div>
                             <div class="c-estudiante">
                                 <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $db = "sire";
-                            
                                     $conn = new mysqli($servername, $username, $password, $db);
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
@@ -198,11 +158,6 @@
                             </div>
                             <div claxcss="cuatri">
                                 <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $db = "sire";
-                            
                                     $conn = new mysqli($servername, $username, $password, $db);
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
@@ -220,11 +175,6 @@
                             </div>
                             <div class="m-estudiante">
                                 <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $db = "sire";
-                        
                                 $conn = new mysqli($servername, $username, $password, $db);
                                 if ($conn->connect_error) {
                                 die("Connection failed: " . $conn->connect_error);
@@ -242,11 +192,6 @@
                             </div>
                             <div class="movil">
                                 <?php
-                                $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $db = "sire";
-                        
                                 $conn = new mysqli($servername, $username, $password, $db);
                                 if ($conn->connect_error) {
                                 die("Connection failed: " . $conn->connect_error);
@@ -264,22 +209,13 @@
                             </div>
                             <div class="succesfully-error">
                                 <?php
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "";
-                                    $db = "sire";
-
                                     $conn = new mysqli($servername, $username, $password, $db);
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
                                     }
                                     $sql = "UPDATE horario_salida SET `".$d."` = now()";
 
-                                    if ($conn->query($sql) === TRUE) {
-                                        echo "Record updated successfully";
-                                        } else {
-                                        echo "Error updating record: " . $conn->error;
-                                    }
+                                    $conn->query($sql);
                                     $conn->close();
                                 ?>
                             </div>
@@ -288,6 +224,6 @@
                 </div>
             </div>
         </div>
-        <?php include("template/Pie.php"); ?>
+        <?php include("../template/Pie1.php"); ?>
     </body>
 </html>

@@ -1,3 +1,4 @@
+<?php include("../config/db.php"); ?>
 <?php 
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
         $url = "https://";   
@@ -12,11 +13,6 @@
     
 ?>
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db = "sire";
-
     date_default_timezone_set("America/Cancun");
     $d = date("d_m_Y");
 
@@ -34,11 +30,6 @@
     $conn->close();
 ?>
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $db = "sire";
-
     date_default_timezone_set("America/Cancun");
     $d = date("d_m_Y");
 
@@ -55,16 +46,15 @@
     }
     $conn->close();
 ?>
-<?php include("config/db.php"); ?>
-<?php include("template/Cabacera.php"); ?>
-    <link rel="stylesheet" href="CSS/css/add.css">
+<?php include("../template/Cabacera2.php"); ?>
+    <link rel="stylesheet" href="../CSS/css/add.css">
     <div class="color-fondo">
         <div class="contenedor1">
             <div class ="contenedor2">
                 <form>
                     <div class="picture">
                         <div class="logo-gtup">
-                            <img class="alinear" src="img/logotec.png">
+                            <img class="alinear" src="../CSS/img/logotec.png">
                         </div>
                         <?php
                             $conn = new mysqli($servername, $username, $password, $db);
@@ -226,12 +216,7 @@
                                 die("Connection failed: " . $conn->connect_error);
                                 }
                                 $sql = "UPDATE horario_entrada SET `".$d."` = now()";
-
-                                if ($conn->query($sql) === TRUE) {
-                                    echo "Record updated successfully";
-                                    } else {
-                                    echo "Error updating record: " . $conn->error;
-                                }
+                                $conn->query($sql);
                                 $conn->close();
                             ?>
                         </div>
@@ -240,6 +225,6 @@
             </div>
         </div>
         </div>
-        <?php include("template/Pie.php"); ?>
+        <?php include("../template/Pie1.php"); ?>
     </body>
 </html>
