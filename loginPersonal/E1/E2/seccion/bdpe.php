@@ -1,7 +1,12 @@
 <?php include ("../template/cabecera.php"); ?>
 <?php include("../../../../config/db.php"); ?>
-
 <?php
+session_start();
+if (!isset($_SESSION['loggedin1'])) {
+	header('Location: ../index.html');
+	exit;
+}
+
 	$ID=(isset($_POST['ID']))?$_POST['ID']:"";
 	$Nombre=(isset($_POST['Nombre']))?$_POST['Nombre']:"";
 	$Apellido=(isset($_POST['Apellido']))?$_POST['Apellido']:"";
@@ -25,7 +30,7 @@
 				$result = "INSERT IGNORE INTO personal(ID_P, Nombre, Apellido, Correo, Contraseña, Turno, Puesto, Departamento, Telefono, Imagen) VALUES ('$ID', '$Nombre', '$Apellido', '$Correo', '$Contra', '$Turno', '$Puesto', '$Departamento', '$Tel', '$Imagen');";
 				$mysqli->query($result);
 
-				header("Location:productos.php");
+				header("Location:bdpe.php");
 				break;
 
 			case "Modificar":
@@ -42,11 +47,11 @@
 					$mysqli->query($result);
 				}
 
-				header("Location:productos.php");
+				header("Location:bdpe.php");
 				break;
 
 			case "Cancelar":
-				header("Location:productos.php");
+				header("Location:bdpe.php");
 				break;
 
 			case "Seleccionar":
@@ -72,7 +77,7 @@
 				$result = "DELETE FROM personal WHERE ID_P = '$ID'";
 				$mysqli->query($result);
 
-				header("Location:productos.php");
+				header("Location:bdpe.php");
 				break;
 		}
 		$mysqli = new mysqli($servername, $username, $password, $db);

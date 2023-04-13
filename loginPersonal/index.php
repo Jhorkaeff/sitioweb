@@ -1,6 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <body>
+        <?php include("../template/Cabacera2.php"); ?>
+        <style>
+            body {
+                padding: 40px;
+            }
+        </style>
         <form action = "autenticador.php" method = "post" enctype = "multipart/form-data">
             <div>
                 <h2>Welcome</h2>
@@ -20,5 +23,5 @@
                 <button type="submit" name="iniciar"> Inicar Sesion </button>
             </div>
         </form>
-    </body>
-</html>
+        <?php include("../template/Pie1.php"); ?>
+        

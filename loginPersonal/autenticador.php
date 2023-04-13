@@ -9,7 +9,7 @@ if(isset($_POST['iniciar'])){
     $password = $_POST['contra'];
     
     $mysqli = new mysqli('localhost','root','','sire');
-    $result = "SELECT ID_P, NombrePersonal, ContraseñaPersonal FROM personal WHERE (LOWER(REPLACE(NombrePersonal, ' ', '')) = '".strtolower(str_replace(' ', '',$username))."' OR LOWER(REPLACE(CorreoPersonal, ' ', '')) = '".strtolower(str_replace(' ', '',$username))."') AND ContraseñaPersonal = '$password'";
+    $result = "SELECT ID_P, Nombre, Contraseña FROM personal WHERE (LOWER(REPLACE(Nombre, ' ', '')) = '".strtolower(str_replace(' ', '',$username))."' OR LOWER(REPLACE(Correo, ' ', '')) = '".strtolower(str_replace(' ', '',$username))."') AND Contraseña = '$password'";
 
     $ress = $mysqli->query($result);    
     $row = mysqli_fetch_array($ress, MYSQLI_ASSOC);  
@@ -25,12 +25,12 @@ if(isset($_POST['iniciar'])){
     $resl = $mysqli->query($result); 
     if ($resl->num_rows > 0){
         
-        $Cont1 = $row['ContraseñaPersonal'];
+        $Cont1 = $row['Contraseña'];
         $Cont2 = $row['ID_P'];
-        $Cont3 = $row['NombrePersonal'];
+        $Cont3 = $row['Nombre'];
         if ($_POST['contra'] === $Cont1){
             session_regenerate_id();
-            $_SESSION['loggedin'] = TRUE;
+            $_SESSION['loggedin1'] = TRUE;
             $_SESSION['name'] = $Cont3;
             $_SESSION['id'] = $Cont2;
             header('Location: E1/inicio.php');

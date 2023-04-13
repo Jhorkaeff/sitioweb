@@ -26,7 +26,7 @@
 				$result = "INSERT IGNORE INTO estudiante(ID_E, Nombre, Apellido, Correo, Contraseña, Turno, Carrera, Cuatrimestre, Modalidad, Telefono, Imagen) VALUES ('$ID', '$Nombre', '$Apellido', '$Correo', '$Contra', '$Turno', '$Carrera', '$Cuatri', '$Mod', '$Tel', '$Imagen');";
 				$mysqli->query($result);
 
-				header("Location:productos.php");
+				header("Location:bdes.php");
 				break;
 
 			case "Modificar":
@@ -43,11 +43,11 @@
 					$mysqli->query($result);
 				}
 
-				header("Location:productos.php");
+				header("Location:bdes.php");
 				break;
 
 			case "Cancelar":
-				header("Location:productos.php");
+				header("Location:bdes.php");
 				break;
 
 			case "Seleccionar":
@@ -74,13 +74,14 @@
 				$result = "DELETE FROM estudiante WHERE ID_E = '$ID'";
 				$mysqli->query($result);
 
-				header("Location:productos.php");
+				header("Location:bdes.php");
 				break;
 		}
 		$mysqli = new mysqli($servername, $username, $password, $db);
-		$resuk = "SELECT * FROM estudiante";
+		$resuk = "SELECT * FROM estudiante, qr";
 		$es = $mysqli->query($resuk);
 		$es -> fetch_all(MYSQLI_ASSOC);
+
 ?>
 <link rel="stylesheet" href="/sitioweb/CSS/css/bde.css">
 <div class="col-md-5">
@@ -235,8 +236,10 @@
 				<th>Cuatrimestre</th>
 				<th>Modalidad</th>
 				<th>Telefono</th>
-                <th>Imagenes</th>
-                <th>Acciones</th>
+                <th>Fotos de perfil</th>
+				<th>Imagen QR Entrada</th>
+				<th>Imagen QR Salida</th>
+				<th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -256,14 +259,20 @@
 						<?php echo '<img class="img-thumbnail rounded" src="data:image/png;base64,'.base64_encode($as['Imagen']).'" width="200" alt="Null" srcset="">'; ?>
 					</td>
 					<td>
+						<?php echo '<img class="img-thumbnail rounded" src="data:image/png;base64,'.base64_encode($as['ImagenQRE']).'" width="200" alt="Null" srcset="">'; ?>
+					</td>
+					<td>
+						<?php echo '<img class="img-thumbnail rounded" src="data:image/png;base64,'.base64_encode($as['ImagenQRS']).'" width="200" alt="Null" srcset="">'; ?>
+					</td>
+					<td>
 						<form method="post">
 							<input type="hidden" name="ID" id="ID" value="<?php echo $as['ID_E']; ?>"/>
 							<input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>
 							<input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>
 						</form>
 					</td>
-				</tr>
 			<?php } ?>
+				</tr>
         </tbody>
     </table> 
 </div>

@@ -23,7 +23,7 @@
 				$result = "INSERT IGNORE INTO profesor(ID_Pr, Nombre, Apellido, Correo, Contraseña, Curso, Telefono, Imagen) VALUES ('$ID', '$Nombre', '$Apellido', '$Correo', '$Contra', '$Curso', '$Tel', '$Imagen');";
 				$mysqli->query($result);
 
-				header("Location:productos.php");
+				header("Location:bdpr.php");
 				break;
 
 			case "Modificar":
@@ -40,11 +40,11 @@
 					$mysqli->query($result);
 				}
 
-				header("Location:productos.php");
+				header("Location:bdpr.php");
 				break;
 
 			case "Cancelar":
-				header("Location:productos.php");
+				header("Location:bdpr.php");
 				break;
 
 			case "Seleccionar":
@@ -68,7 +68,7 @@
 				$result = "DELETE FROM profesor WHERE ID_Pr = '$ID'";
 				$mysqli->query($result);
 
-				header("Location:productos.php");
+				header("Location:bdpr.php");
 				break;
 		}
 		$mysqli = new mysqli($servername, $username, $password, $db);

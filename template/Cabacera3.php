@@ -14,9 +14,9 @@
                 <img class="logo1" src="CSS/img/sirelogo">
                 <nav class="navigation">
                     <ul>
-                        <li><a href="loginEstudiantes/index.html">Inicio para estudiates</a></li>
-                        <li><a href="loginMaestros/index.html">Inicio para maestros</a></li>
-                        <li><a href="loginPersonal/index.html">Inicio para personal</a></li>
+                        <li><a href="loginEstudiantes/index.php">Inicio para estudiates</a></li>
+                        <li><a href="loginMaestros/index.php">Inicio para maestros</a></li>
+                        <li><a href="loginPersonal/index.php">Inicio para personal</a></li>
                     </ul>
                 </nav>
                 <nav class="navigation">
