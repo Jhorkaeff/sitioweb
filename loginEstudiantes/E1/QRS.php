@@ -23,9 +23,15 @@ if(isset($row['NombreQR'])){
 }
     include("../../template/CabaceraO.php");
     echo "<style>
+    html {
+        min-height: 100%;
+        position: relative;
+    }
     body{
         padding: 80px;
         padding-left:0px;
+        margin: 0;
+        margin-bottom: 300px;
     }
     footer
     {

@@ -1,4 +1,4 @@
-<?php include("../../../../template/Cabacera1.php"); ?>
+<?php include("../../../../template/CabaceraR.php"); ?>
 
 <link rel="stylesheet" href="../../../../CSS/css/Cargar.css">
 		<div class="fondo-animado">
@@ -123,6 +123,6 @@
 			</section>
 		</div>	
 		</div>
-		<?php include("../../../../template/Pie1.php"); ?> 
+		<?php include("../../../../template/PieA.php"); ?> 
 	</body>
 </html>

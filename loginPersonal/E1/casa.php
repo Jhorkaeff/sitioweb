@@ -22,6 +22,10 @@ include ('../../template/Cabacera1.php');
         }
         </style>
 	<body class="loggedin">
+		<div class="content">
+			<h2>Pagina de herramientas</h2>
+			<p>Bienvenido, <?=$_SESSION['name']?>!</p>
+		</div>
 		<table>
 			<tr>
 				<th><a href="E2/seccion/bdes.php">Base de datos de estudiantes</a></th>
@@ -43,9 +47,5 @@ include ('../../template/Cabacera1.php');
 				</td>
 			</tr>
 		</table>
-		<div class="content">
-			<h2>Pagina Principal</h2>
-			<p>Bienvenido, <?=$_SESSION['name']?>!</p>
-		</div>
 		<?php include ('../../template/PieU.php');?>
 	</body>

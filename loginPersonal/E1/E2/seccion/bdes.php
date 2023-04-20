@@ -82,7 +82,7 @@
 		$es -> fetch_all(MYSQLI_ASSOC);
 
 ?>
-<?php include ('../../../../template/CabaceraU.php'); ?>
+<?php include ('../../../../template/CabaceraE.php'); ?>
 <style>
 	body{
 		padding: 140px;

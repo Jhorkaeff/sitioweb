@@ -1,3 +1,7 @@
+<?php
+if(isset($_POST['iniciar'])){
+    $id = $_POST['ID'];
+?>
 <html>
     <head>
         <style>
@@ -29,7 +33,7 @@
             </tr>
             <?php    
             $mysqli = new mysqli('localhost','root','','sire');
-            $sql = $mysqli->query ("SELECT * FROM horario_salida");
+            $sql = $mysqli->query ("SELECT * FROM horario_salida WHERE ID_HS = '$id'");
             while ($row = mysqli_fetch_row($sql)){
                 unset($row[0]); 
                 $ke = implode('</td><td>', $row);
@@ -42,3 +46,4 @@
         </table>
     </body>
 </html>
+<?php } ?>

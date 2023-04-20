@@ -75,7 +75,7 @@
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
                                     }
-                                    $sql = "SELECT Nombre From From profesor WHERE ID_Pr = '$I'";
+                                    $sql = "SELECT Nombre From profesor WHERE ID_Pr = '$I'";
 
                                     $result = $conn->query($sql);
                                     if ($result->num_rows > 0){
@@ -92,7 +92,7 @@
                                     if ($conn->connect_error) {
                                     die("Connection failed: " . $conn->connect_error);
                                     }
-                                    $sql = "SELECT Apellido From From profesor WHERE ID_Pr = '$I'";
+                                    $sql = "SELECT Apellido From profesor WHERE ID_Pr = '$I'";
 
                                     $result = $conn->query($sql);
                                     if ($result->num_rows > 0){

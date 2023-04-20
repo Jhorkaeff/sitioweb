@@ -23,7 +23,7 @@ if(isset($row['NombreQR'])){
 }
 echo "<style>
 body{
-    padding: 80px;
+    padding: 140px;
     padding-left:0px;
 }
 footer

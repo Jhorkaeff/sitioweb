@@ -1,5 +1,5 @@
-<?php include("template/Cabacera.php"); ?>
-<link rel="stylesheet" href="CSS/css/Cargar.css">
+<?php include("../../../../template/CabaceraR.php"); ?>
+<link rel="stylesheet" href="../../../../CSS/css/Cargar.css">
 		<div class="fondo-animado">	
 		<section class="main">
 			<form action="CrearPr.php" method="post" enctype="multipart/form-data">
@@ -115,6 +115,6 @@
 			}
 		}
 		?>
-		<?php include("template/Pie.php"); ?> 
+		<?php include("../../../../template/PieA.php"); ?> 
 	</body>
 </html>
