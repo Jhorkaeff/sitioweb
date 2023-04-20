@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="CSS/css/Cargar.css">
 		<div class="fondo-animado">	
 		<section class="main">
-			<form action="Crear.php" method="post" enctype="multipart/form-data">
+			<form action="CrearPr.php" method="post" enctype="multipart/form-data">
 				<div class = "contenidou">
 					<h3>Crear QR</h3>
 					<h4>IMPORTANTE: <span><font color="white">Agregue los datos del estudiante</font></span></h4>
@@ -14,16 +14,16 @@
 							<option value="1">Selecciona la ID:</option>
 							<?php
 							$mysqli = new mysqli('localhost','root','','sire');
-							$query = "SELECT ID_P FROM personal";
+							$query = "SELECT ID_Pr FROM profesor";
 							$resu = $mysqli->query($query);
 							if($resu != false){
-								$sql = "SELECT ID_P FROM personal";
+								$sql = "SELECT ID_Pr FROM profesor";
 							}else{
 								echo 'La consulta a ocurrido un error';
 							}
 							for($i=0; $i < $resu->num_rows; $i++){
 								$fila_usuario = $resu->fetch_assoc();
-								echo '<option>'.$fila_usuario['ID_P'].'</option>';
+								echo '<option>'.$fila_usuario['ID_Pr'].'</option>';
 							}
 							$mysqli->close();
 							?>
@@ -52,12 +52,12 @@
 
 			switch($_POST['qrd']){
 				case "entrada":
-					$urle = "$path/entrada.php?ID=$ID";
+					$urle = "../../mostrar/entradaPr.php?ID=$ID";
 					QRcode::png($urle, 'temp/QRE.png' , QR_ECLEVEL_L, 10, 3);
 					echo '<img src="temp/QRE.png"/>';
 
 					$mysqli = new mysqli('localhost','root','','sire');
-					$result = "SELECT Nombre FROM personal  WHERE ID_P = '$ID'";
+					$result = "SELECT Nombre FROM profesor WHERE ID_Pr = '$ID'";
 					$resu = $mysqli->query($result);
 					if ($result) {
 						if (mysqli_num_rows($resu)) {
@@ -66,7 +66,7 @@
 						}
 					}
 		
-					$resultp = "SELECT Apellido FROM personal WHERE ID_P = '$ID'";
+					$resultp = "SELECT Apellido FROM profesor WHERE ID_Pr = '$ID'";
 					$resud = $mysqli->query($resultp);
 					if ($resultp) {
 						if (mysqli_num_rows($resud)) {
@@ -77,22 +77,18 @@
 		
 					$imh = $ID."_".$Nombre."_".$Apellido.".png";
 
-					$sql = "INSERT IGNORE INTO qr (ID_Q, NombreQR, ImagenQRE) VALUES ('$ID', '$imh', LOAD_FILE('C:/xampp/htdocs/codigo_qr/temp/QRE.png'))";
-					if ($mysqli->query($sql) === TRUE) {
-						echo "Record updated successfully";
-					} else {
-						echo "Error updating record: " . $mysqli->error;
-					}
+					$sql = "INSERT IGNORE INTO qr (ID_Q, NombreQR, ImagenQRE) VALUES ('$ID', '$imh', LOAD_FILE('C:/xampp/htdocs/sitioweb/loginPersonal/E1/E2/codigo_qr/temp/QRE.png'))";
+					$mysqli->query($sql);
 					$mysqli->close();
 					break;
 
 				case "salida":
-					$urls = "$path/salida.php?ID=$ID";
+					$urls = "../../mostrar/salidaPr.php?ID=$ID";
 					QRcode::png($urls, 'temp/QRS.png' , QR_ECLEVEL_L, 10, 3);
 					echo '<img src="temp/QRS.png"/>';
 
 					$mysqli = new mysqli('localhost','root','','sire');
-					$result = "SELECT Nombre FROM personal WHERE ID_P = '$ID'";
+					$result = "SELECT Nombre FROM profesor WHERE ID_Pr = '$ID'";
 					$resu = $mysqli->query($result);
 					if ($result) {
 						if (mysqli_num_rows($resu)) {
@@ -101,7 +97,7 @@
 						}
 					}
 		
-					$resultp = "SELECT Apellido FROM personal WHERE ID_P = '$ID'";
+					$resultp = "SELECT Apellido FROM profesor WHERE ID_Pr = '$ID'";
 					$resud = $mysqli->query($resultp);
 					if ($resultp) {
 						if (mysqli_num_rows($resud)) {
@@ -112,12 +108,8 @@
 		
 					$imh = $ID."_".$Nombre."_".$Apellido.".png";
 
-					$sql = "INSERT IGNORE INTO qr (ID_Q, NombreQR, ImagenQRS) VALUES ('$ID', '$imh', LOAD_FILE('C:/xampp/htdocs/codigo_qr/temp/QRS.png'))";
-					if ($mysqli->query($sql) === TRUE) {
-						echo "Record updated successfully";
-					} else {
-						echo "Error updating record: " . $mysqli->error;
-					}
+					$sql = "INSERT IGNORE INTO qr (ID_Q, NombreQR, ImagenQRS) VALUES ('$ID', '$imh', LOAD_FILE('C:/xampp/htdocs/sitioweb/loginPersonal/E1/E2/codigo_qr/temp/QRS.png'))";
+					$mysqli->query($sql);
 					$mysqli->close();
 					break;
 			}
