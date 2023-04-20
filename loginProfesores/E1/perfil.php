@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin2'])) {
 	header('Location: ../index.php');
 	exit;
 }
@@ -13,7 +13,7 @@ if ($mysqli->connect_error) {
 die("Connection failed: " . $mysqli->connect_error);
 }
 
-$result = "SELECT Contraseña, Correo FROM estudiante WHERE ID_E = '$i'";
+$result = "SELECT Contraseña, Correo FROM profesor WHERE ID_Pr = '$i'";
 $resp = $mysqli->query($result);
 
 if ($resp->num_rows > 0){

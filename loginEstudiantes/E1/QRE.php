@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: ../index.html');
+	header('Location: ../index.php');
 	exit;
 }
 
@@ -21,7 +21,7 @@ $row = $resy->fetch_assoc();
 if(isset($row['NombreQR'])){
     $Cont3 = $row['NombreQR'];
 }
-    include("../../template/CabaceraU.php");
+    include("../../template/CabaceraO.php");
     echo "<style>
     body{
         padding: 80px;
@@ -47,5 +47,5 @@ if(isset($row['NombreQR'])){
             echo '</div>';
         echo '</div>';
     echo '</div>';
-    include("../../template/PieU.php");
+    include("../../template/PieO.php");
 ?>

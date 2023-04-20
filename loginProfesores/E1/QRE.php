@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin2'])) {
 	header('Location: ../index.php');
 	exit;
 }
@@ -12,7 +12,7 @@ $mysqli = new mysqli($servername, $username, $password, $db);
 if ($mysqli->connect_error) {
 die("Connection failed: " . $mysqli->connect_error);
 }
-$result = "SELECT ImagenQRS FROM qr WHERE ID_Q = '$i'";
+$result = "SELECT ImagenQRE FROM qr WHERE ID_Q = '$i'";
 $rese = "SELECT NombreQR FROM qr WHERE ID_Q = '$i'";
 $resp = $mysqli->query($result);
 $result=mysqli_fetch_array($resp);
@@ -38,10 +38,10 @@ if(isset($row['NombreQR'])){
     </style>";
     echo "<div class='col-md-3'>";
         echo '<div class="card">';
-        echo '<img src="data:image/png;base64,'.base64_encode($result['ImagenQRS']).'"/>';
+        echo '<img src="data:image/png;base64,'.base64_encode($result['ImagenQRE']).'"/>';
             echo '<div class="card-body">';
                 echo '<h4>'.$Cont3.'</h4>';
-                echo '<a href="descargarQRS.php?ID='.$i.'" download="'.$Cont3.'">';
+                echo '<a href="descargarQRE.php?ID='.$i.'" download="'.$Cont3.'">';
                     echo "<button> Descargar </button>";
                 echo "</a>";
             echo '</div>';
