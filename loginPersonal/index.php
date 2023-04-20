@@ -1,8 +1,17 @@
         <?php include("../template/Cabacera2.php"); ?>
         <style>
-            body {
-                padding: 40px;
-            }
+        body{
+            padding: 40px;
+        }
+        footer
+        {
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            color: white;
+        }
         </style>
         <form action = "autenticador.php" method = "post" enctype = "multipart/form-data">
             <div>

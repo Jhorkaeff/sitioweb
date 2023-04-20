@@ -16,17 +16,11 @@
                 <img class="logo1" src="../../CSS/img/sirelogo">
                 <nav class="navigation">
                     <ul>
-                        <li><a href="QRE.php">QR Entrada</a></li>
-                        <li><a href="QRS.php">QR Salida</a></li>
-                    </ul>
-                </nav>
-                <nav class="navigation">
-                    <ul>
-                        <li><a href="<?php echo $url;?>">Pagina Inicio</a></li>
-                        <li><a href="inicio.php">Inico</a></li>
-                        <li><a href="casa.php">Administracion</a></li>
-                        <li><a href="perfil.php">Perfil</a></li>
-                        <li><a href="cerrar.php">Salir</a></li>
+                        <li><a href="casa.php"></i>Inicio</a></li>
+                        <li><a href="perfil.php"></i>Perfil</a></li>
+                        <li><a href="salir.php"></i>Salir</a></li>
+                        <li><a href="QRE.php">Mi QR Entrada</a></li>
+                        <li><a href="QRS.php">Mi QR Salida</a></li>
                     </ul>
                 </nav>
             </div>

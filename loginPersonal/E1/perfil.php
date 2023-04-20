@@ -22,6 +22,20 @@ if ($resp->num_rows > 0){
     $Correo = $row['Correo'];
 }
 ?>
+        <style>
+        body{
+            padding: 80px;
+        }
+        footer
+        {
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            color: white;
+        }
+        </style>
 		<div class="content">
 			<h2>Perfil del usuario</h2>
 			<div>
@@ -43,5 +57,5 @@ if ($resp->num_rows > 0){
 			</div>
 		</div>
 	</body>
-	<?php include ('E2/template/pie.php');?>     
+	<?php include("../../template/PieU.php"); ?>    
 </html>

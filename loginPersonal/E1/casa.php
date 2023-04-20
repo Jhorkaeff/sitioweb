@@ -1,31 +1,50 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: ../index.html');
+if (!isset($_SESSION['loggedin1'])) {
+	header('Location: ../index.php');
 	exit;
 }
+include ('../../template/Cabacera1.php');
 ?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-	</head>
+        <style>
+        body{
+            padding: 120px;
+        }
+        footer
+        {
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            color: white;
+        }
+        </style>
 	<body class="loggedin">
-		<nav class="navtop">
-			<div>
-				<h1>Sire QR</h1>
-				<a href="perfil.php"><i class="fas fa-user-circle"></i>Profile</a>
-				<a href="salir.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-				<a href="QRE.php"><i class="fas fa-sign-out-alt"></i>Mi QR</a>
-				<a href="QRS.php"><i class="fas fa-sign-out-alt"></i>Mi QR</a>
-				<a href="E2/inicio.php"><i></i>Inicio</a>
-			</div>
-		</nav>
+		<table>
+			<tr>
+				<th><a href="E2/seccion/bdes.php">Base de datos de estudiantes</a></th>
+				<th><a href="E2/seccion/bdpr.php">Base de datos de profesores</a></th>
+				<th><a href="E2/seccion/bdpe.php">Base de datos de personal</a></th>
+			</tr>
+			<tr>
+				<td>
+					<a href="E2/codigo_qr/CrearE.php">Crear QR</a>
+					<a href="E2/codigo_qr/CargarE.php">Cargar QR</a>
+				</td>
+				<td>
+					<a href="E2/codigo_qr/CrearPr.php">Crear QR</a>
+					<a href="E2/codigo_qr/CargarPr.php">Cargar QR</a>
+				</td>
+				<td>
+					<a href="E2/codigo_qr/CrearP.php">Crear QR</a>
+					<a href="E2/codigo_qr/CargarP.php">Cargar QR</a>
+				</td>
+			</tr>
+		</table>
 		<div class="content">
 			<h2>Pagina Principal</h2>
 			<p>Bienvenido, <?=$_SESSION['name']?>!</p>
 		</div>
+		<?php include ('../../template/PieU.php');?>
 	</body>
-</html>

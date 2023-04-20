@@ -6,6 +6,7 @@ if (!isset($_SESSION['loggedin1'])) {
 }
 
 $i = $_SESSION['id'];
+include ('../../template/Cabacera1.php');
 include("../../config/db.php");
 
 $mysqli = new mysqli($servername, $username, $password, $db);
@@ -21,6 +22,20 @@ $row = $resy->fetch_assoc();
 if(isset($row['NombreQR'])){
     $Cont3 = $row['NombreQR'];
 }
+echo "<style>
+body{
+    padding: 80px;
+}
+footer
+{
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+}
+</style>";
     echo "<div class='col-md-3'>";
         echo '<div class="card">';
         echo '<img src="data:image/png;base64,'.base64_encode($result['ImagenQRS']).'"/>';
@@ -32,4 +47,5 @@ if(isset($row['NombreQR'])){
             echo '</div>';
         echo '</div>';
     echo '</div>';
+    include("../../template/PieU.php");
 ?>
