@@ -9,6 +9,7 @@ if (!isset($_SESSION['loggedin2'])) {
 <style>
 body{
     padding: 40px;
+	padding-left:0px;
 }
 footer
 {

@@ -2,6 +2,7 @@
 <style>
 body{
     padding: 40px;
+    padding-left:0px;
 }
 footer
 {

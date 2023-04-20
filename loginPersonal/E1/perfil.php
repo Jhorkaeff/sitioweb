@@ -25,6 +25,7 @@ if ($resp->num_rows > 0){
         <style>
         body{
             padding: 80px;
+			padding-left:0px;
         }
         footer
         {

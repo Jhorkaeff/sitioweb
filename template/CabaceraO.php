@@ -16,6 +16,7 @@
                 <img class="logo1" src="../../CSS/img/sirelogo">
                 <nav class="navigation">
                     <ul>
+                        <li><a href="casa.php"></i>Inicio</a></li>
                         <li><a href="perfil.php"></i>Perfil</a></li>
                         <li><a href="salir.php"></i>Salir</a></li>
                         <li><a href="QRE.php">Mi QR Entrada</a></li>

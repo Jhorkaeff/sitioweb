@@ -9,6 +9,7 @@ include ('../../template/Cabacera1.php');
         <style>
         body{
             padding: 80px;
+            padding-left:0px;
         }
         footer
         {
