@@ -26,7 +26,7 @@
                         <li><a href="inicio.php">Inicio</a></li>
                         <li><a href="casa.php">Administracion</a></li>
                         <li><a href="perfil.php">Perfil</a></li>
-                        <li><a href="cerrar.php">Salir</a></li>
+                        <li><a href="salir.php">Salir</a></li>
                     </ul>
                 </nav>
             </div>
