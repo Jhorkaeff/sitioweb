@@ -1,6 +1,6 @@
-<?php include("template/Cabacera.php"); ?>
+<?php include("../../../../template/Cabacera1.php"); ?>
 
-<link rel="stylesheet" href="CSS/css/Cargar.css">
+<link rel="stylesheet" href="../../../../CSS/css/Cargar.css">
 		<div class="fondo-animado">
 		<div class="grid">
 			<section class="main">
@@ -131,6 +131,6 @@
 			</section>
 		</div>	
 		</div>
-		<?php include("template/Pie.php"); ?> 
+		<?php include("../../../../template/Pie1.php"); ?> 
 	</body>
 </html>

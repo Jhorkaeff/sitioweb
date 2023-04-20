@@ -7,6 +7,7 @@ if (!isset($_SESSION['loggedin1'])) {
 $i = $_SESSION['id'];
 include ('../../template/Cabacera1.php');
 include("../../config/db.php");
+
 $mysqli = new mysqli($servername, $username, $password, $db);
 if ($mysqli->connect_error) {
 die("Connection failed: " . $mysqli->connect_error);

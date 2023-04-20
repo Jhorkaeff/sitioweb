@@ -78,7 +78,7 @@
 				break;
 		}
 		$mysqli = new mysqli($servername, $username, $password, $db);
-		$resuk = "SELECT * FROM estudiante, qr";
+		$resuk = "SELECT estudiante.*, qr.ImagenQRE, qr.ImagenQRS FROM estudiante INNER JOIN qr ON estudiante.ID_E = qr.ID_Q";
 		$es = $mysqli->query($resuk);
 		$es -> fetch_all(MYSQLI_ASSOC);
 

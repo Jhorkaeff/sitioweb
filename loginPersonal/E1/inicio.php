@@ -1,9 +1,10 @@
-<?php include ('../../template/Cabacera1.php');
+<?php
 session_start();
 if (!isset($_SESSION['loggedin1'])) {
 	header('Location: ../index.php');
 	exit;
 }
+include ('../../template/Cabacera1.php');
 ?>
         <body>
             <div class="col-md-12">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin1'])) {
 	header('Location: ../index.html');
 	exit;
 }

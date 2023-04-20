@@ -1,11 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin1'])) {
 	header('Location: ../index.html');
 	exit;
 }
-
 $i = $_SESSION['id'];
+include ('../../template/Cabacera1.php');
 include("../../config/db.php");
 
 $mysqli = new mysqli($servername, $username, $password, $db);
